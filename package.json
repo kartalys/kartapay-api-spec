@@ -1,19 +1,19 @@
 {
-  "name": "foulsy-api-spec",
+  "name": "flousy-api-spec",
   "version": "1.0.0",
-  "description": "Foulsy Payment Provider API spec",
+  "description": "Flousy Payment Provider API spec",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/foulsy/foulsy.github.io.git"
+    "url": "git+https://github.com/flousy/flousy.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/foulsy/foulsy.github.io/issues"
+    "url": "https://github.com/flousy/flousy.github.io/issues"
   },
-  "homepage": "https://github.com/foulsy/foulsy.github.io#readme",
+  "homepage": "https://github.com/flousy/flousy.github.io#readme",
   "dependencies": {
     "redoc-cli": "^0.13.20"
   }
