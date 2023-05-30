@@ -197,6 +197,8 @@
                         "description": "The customer's suited method for the payment.",
                         "enum": [
                           "HOL",
+                          "HRM",
+                          "MVL",
                           "PYP",
                           "STR"
                         ]
@@ -474,6 +476,8 @@
                               "description": "The customer's suited method for the payment.",
                               "enum": [
                                 "HOL",
+                                "HRM",
+                                "MVL",
                                 "PYP",
                                 "STR"
                               ]
@@ -902,6 +906,8 @@
                                 "description": "The customer's suited method for the payment.",
                                 "enum": [
                                   "HOL",
+                                  "HRM",
+                                  "MVL",
                                   "PYP",
                                   "STR"
                                 ]
@@ -1312,6 +1318,8 @@
                           "description": "The customer's suited method for the payment.",
                           "enum": [
                             "HOL",
+                            "HRM",
+                            "MVL",
                             "PYP",
                             "STR"
                           ]
@@ -1709,6 +1717,8 @@
                               "description": "The customer's suited method for the payment.",
                               "enum": [
                                 "HOL",
+                                "HRM",
+                                "MVL",
                                 "PYP",
                                 "STR"
                               ]
@@ -2108,6 +2118,8 @@
                               "description": "The customer's suited method for the payment.",
                               "enum": [
                                 "HOL",
+                                "HRM",
+                                "MVL",
                                 "PYP",
                                 "STR"
                               ]
