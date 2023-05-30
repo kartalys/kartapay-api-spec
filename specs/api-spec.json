@@ -2445,7 +2445,7 @@
     }
   },
   "info": {
-    "title": "Foulsy API",
+    "title": "Foulsy REST API",
     "description": "The Foulsy REST API provides resource-oriented endpoints to create and capture payments using HTTP standards (status code, authentication, etc.)",
     "version": "1.0.0",
     "contact": {}
