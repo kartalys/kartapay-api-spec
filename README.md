@@ -1,2 +1,2 @@
-# flousy-api-spec
-Flousy payment provider API spec
+# foulsy-api-spec
+Foulsy payment provider API spec
