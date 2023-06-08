@@ -194,7 +194,7 @@
                     "properties": {
                       "source": {
                         "type": "string",
-                        "description": "The customer's suited method for the payment.",
+                        "description": "The customer's suited gateway for the payment.",
                         "enum": [
                           "HOL",
                           "HRM",
@@ -285,27 +285,27 @@
                               "properties": {
                                 "sources": {
                                   "type": "array",
-                                  "description": "The payee's suitable methods for the payment.",
+                                  "description": "The payee's suitable gateways for the payment.",
                                   "items": {
                                     "type": "object",
-                                    "description": "A payee's payment method.",
+                                    "description": "A payee's payment gateway.",
                                     "properties": {
-                                      "res": {
-                                        "title": "Source",
+                                      "gateway": {
+                                        "title": "Gateway",
                                         "type": "object",
-                                        "description": "A payment method.",
+                                        "description": "A payment gateway.",
                                         "properties": {
                                           "code": {
                                             "type": "string",
-                                            "description": "The code of the method."
+                                            "description": "The code of the gateway."
                                           },
                                           "name": {
                                             "type": "string",
-                                            "description": "The name of the method."
+                                            "description": "The name of the gateway."
                                           },
                                           "image": {
                                             "type": "string",
-                                            "description": "The URL of the method image."
+                                            "description": "The URL of the gateway image."
                                           }
                                         }
                                       }
@@ -473,7 +473,7 @@
                           "properties": {
                             "source": {
                               "type": "string",
-                              "description": "The customer's suited method for the payment.",
+                              "description": "The customer's suited gateway for the payment.",
                               "enum": [
                                 "HOL",
                                 "HRM",
@@ -715,27 +715,27 @@
                                 "properties": {
                                   "sources": {
                                     "type": "array",
-                                    "description": "The payee's suitable methods for the payment.",
+                                    "description": "The payee's suitable gateways for the payment.",
                                     "items": {
                                       "type": "object",
-                                      "description": "A payee's payment method.",
+                                      "description": "A payee's payment gateway.",
                                       "properties": {
-                                        "res": {
-                                          "title": "Source",
+                                        "gateway": {
+                                          "title": "Gateway",
                                           "type": "object",
-                                          "description": "A payment method.",
+                                          "description": "A payment gateway.",
                                           "properties": {
                                             "code": {
                                               "type": "string",
-                                              "description": "The code of the method."
+                                              "description": "The code of the gateway."
                                             },
                                             "name": {
                                               "type": "string",
-                                              "description": "The name of the method."
+                                              "description": "The name of the gateway."
                                             },
                                             "image": {
                                               "type": "string",
-                                              "description": "The URL of the method image."
+                                              "description": "The URL of the gateway image."
                                             }
                                           }
                                         }
@@ -903,7 +903,7 @@
                             "properties": {
                               "source": {
                                 "type": "string",
-                                "description": "The customer's suited method for the payment.",
+                                "description": "The customer's suited gateway for the payment.",
                                 "enum": [
                                   "HOL",
                                   "HRM",
@@ -1127,27 +1127,27 @@
                           "properties": {
                             "sources": {
                               "type": "array",
-                              "description": "The payee's suitable methods for the payment.",
+                              "description": "The payee's suitable gateways for the payment.",
                               "items": {
                                 "type": "object",
-                                "description": "A payee's payment method.",
+                                "description": "A payee's payment gateway.",
                                 "properties": {
-                                  "res": {
-                                    "title": "Source",
+                                  "gateway": {
+                                    "title": "Gateway",
                                     "type": "object",
-                                    "description": "A payment method.",
+                                    "description": "A payment gateway.",
                                     "properties": {
                                       "code": {
                                         "type": "string",
-                                        "description": "The code of the method."
+                                        "description": "The code of the gateway."
                                       },
                                       "name": {
                                         "type": "string",
-                                        "description": "The name of the method."
+                                        "description": "The name of the gateway."
                                       },
                                       "image": {
                                         "type": "string",
-                                        "description": "The URL of the method image."
+                                        "description": "The URL of the gateway image."
                                       }
                                     }
                                   }
@@ -1315,7 +1315,7 @@
                       "properties": {
                         "source": {
                           "type": "string",
-                          "description": "The customer's suited method for the payment.",
+                          "description": "The customer's suited gateway for the payment.",
                           "enum": [
                             "HOL",
                             "HRM",
@@ -1526,27 +1526,27 @@
                               "properties": {
                                 "sources": {
                                   "type": "array",
-                                  "description": "The payee's suitable methods for the payment.",
+                                  "description": "The payee's suitable gateways for the payment.",
                                   "items": {
                                     "type": "object",
-                                    "description": "A payee's payment method.",
+                                    "description": "A payee's payment gateway.",
                                     "properties": {
-                                      "res": {
-                                        "title": "Source",
+                                      "gateway": {
+                                        "title": "Gateway",
                                         "type": "object",
-                                        "description": "A payment method.",
+                                        "description": "A payment gateway.",
                                         "properties": {
                                           "code": {
                                             "type": "string",
-                                            "description": "The code of the method."
+                                            "description": "The code of the gateway."
                                           },
                                           "name": {
                                             "type": "string",
-                                            "description": "The name of the method."
+                                            "description": "The name of the gateway."
                                           },
                                           "image": {
                                             "type": "string",
-                                            "description": "The URL of the method image."
+                                            "description": "The URL of the gateway image."
                                           }
                                         }
                                       }
@@ -1714,7 +1714,7 @@
                           "properties": {
                             "source": {
                               "type": "string",
-                              "description": "The customer's suited method for the payment.",
+                              "description": "The customer's suited gateway for the payment.",
                               "enum": [
                                 "HOL",
                                 "HRM",
@@ -1927,27 +1927,27 @@
                               "properties": {
                                 "sources": {
                                   "type": "array",
-                                  "description": "The payee's suitable methods for the payment.",
+                                  "description": "The payee's suitable gateways for the payment.",
                                   "items": {
                                     "type": "object",
-                                    "description": "A payee's payment method.",
+                                    "description": "A payee's payment gateway.",
                                     "properties": {
-                                      "res": {
-                                        "title": "Source",
+                                      "gateway": {
+                                        "title": "Gateway",
                                         "type": "object",
-                                        "description": "A payment method.",
+                                        "description": "A payment gateway.",
                                         "properties": {
                                           "code": {
                                             "type": "string",
-                                            "description": "The code of the method."
+                                            "description": "The code of the gateway."
                                           },
                                           "name": {
                                             "type": "string",
-                                            "description": "The name of the method."
+                                            "description": "The name of the gateway."
                                           },
                                           "image": {
                                             "type": "string",
-                                            "description": "The URL of the method image."
+                                            "description": "The URL of the gateway image."
                                           }
                                         }
                                       }
@@ -2115,7 +2115,7 @@
                           "properties": {
                             "source": {
                               "type": "string",
-                              "description": "The customer's suited method for the payment.",
+                              "description": "The customer's suited gateway for the payment.",
                               "enum": [
                                 "HOL",
                                 "HRM",
