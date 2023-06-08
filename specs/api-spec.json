@@ -1865,6 +1865,32 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "description": "The customer's payment plan.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Plan",
+                "type": "object",
+                "description": "The customer's payment plan.",
+                "properties": {
+                  "source": {
+                    "type": "string",
+                    "description": "The customer's suited gateway for the payment.",
+                    "enum": [
+                      "HOL",
+                      "HRM",
+                      "MVL",
+                      "PYP",
+                      "STR"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
