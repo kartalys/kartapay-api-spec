@@ -3,8 +3,8 @@
   "paths": {
     "/v1/payments": {
       "post": {
-        "operationId": "PaymentController_claim",
-        "summary": "Claim a payment",
+        "operationId": "PaymentController_create",
+        "summary": "Create a payment",
         "parameters": [
           {
             "name": "Accept-Language",
@@ -207,11 +207,11 @@
                   },
                   "cancelUrl": {
                     "type": "string",
-                    "description": "The URL to redirect your customers to when the payment is canceled."
+                    "description": "The URL to redirect your customers to after the payment is canceled."
                   },
                   "successUrl": {
                     "type": "string",
-                    "description": "The URL to redirect your customers to when the payment is executed."
+                    "description": "The URL to redirect your customers to after the payment is executed."
                   }
                 },
                 "required": [
@@ -486,11 +486,11 @@
                         },
                         "cancelUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to when the payment is canceled."
+                          "description": "The URL to redirect your customers to after the payment is canceled."
                         },
                         "successUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to when the payment is executed."
+                          "description": "The URL to redirect your customers to after the payment is executed."
                         },
                         "billing": {
                           "title": "Billing",
@@ -499,19 +499,19 @@
                           "properties": {
                             "submitUrl": {
                               "type": "string",
-                              "description": "The URL to redirect your customers to when the payment is claimed."
+                              "description": "The URL to redirect your customers to after the payment is created."
                             },
                             "approvalUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is submitted."
+                              "description": "The URL where your customers are redirected to after the payment is submitted."
                             },
                             "declineUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is declined on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                             },
                             "executeUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is approved on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                             },
                             "thirdId": {
                               "type": "string",
@@ -531,17 +531,13 @@
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received when the payment is completed."
+                              "description": "The signature of the webhook message received after the payment is completed."
                             }
                           }
                         },
                         "createdAt": {
                           "type": "string",
                           "description": "Time at which the payment was created."
-                        },
-                        "claimedAt": {
-                          "type": "string",
-                          "description": "Time at which the payment was claimed."
                         },
                         "canceledAt": {
                           "type": "string",
@@ -916,11 +912,11 @@
                           },
                           "cancelUrl": {
                             "type": "string",
-                            "description": "The URL to redirect your customers to when the payment is canceled."
+                            "description": "The URL to redirect your customers to after the payment is canceled."
                           },
                           "successUrl": {
                             "type": "string",
-                            "description": "The URL to redirect your customers to when the payment is executed."
+                            "description": "The URL to redirect your customers to after the payment is executed."
                           },
                           "billing": {
                             "title": "Billing",
@@ -929,19 +925,19 @@
                             "properties": {
                               "submitUrl": {
                                 "type": "string",
-                                "description": "The URL to redirect your customers to when the payment is claimed."
+                                "description": "The URL to redirect your customers to after the payment is created."
                               },
                               "approvalUrl": {
                                 "type": "string",
-                                "description": "The URL where your customers are redirected to when the payment is submitted."
+                                "description": "The URL where your customers are redirected to after the payment is submitted."
                               },
                               "declineUrl": {
                                 "type": "string",
-                                "description": "The URL where your customers are redirected to when the payment is declined on the third-party side."
+                                "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                               },
                               "executeUrl": {
                                 "type": "string",
-                                "description": "The URL where your customers are redirected to when the payment is approved on the third-party side."
+                                "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                               },
                               "thirdId": {
                                 "type": "string",
@@ -961,17 +957,13 @@
                               },
                               "signature": {
                                 "type": "string",
-                                "description": "The signature of the webhook message received when the payment is completed."
+                                "description": "The signature of the webhook message received after the payment is completed."
                               }
                             }
                           },
                           "createdAt": {
                             "type": "string",
                             "description": "Time at which the payment was created."
-                          },
-                          "claimedAt": {
-                            "type": "string",
-                            "description": "Time at which the payment was claimed."
                           },
                           "canceledAt": {
                             "type": "string",
@@ -1328,11 +1320,11 @@
                     },
                     "cancelUrl": {
                       "type": "string",
-                      "description": "The URL to redirect your customers to when the payment is canceled."
+                      "description": "The URL to redirect your customers to after the payment is canceled."
                     },
                     "successUrl": {
                       "type": "string",
-                      "description": "The URL to redirect your customers to when the payment is executed."
+                      "description": "The URL to redirect your customers to after the payment is executed."
                     },
                     "billing": {
                       "title": "Billing",
@@ -1341,19 +1333,19 @@
                       "properties": {
                         "submitUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to when the payment is claimed."
+                          "description": "The URL to redirect your customers to after the payment is created."
                         },
                         "approvalUrl": {
                           "type": "string",
-                          "description": "The URL where your customers are redirected to when the payment is submitted."
+                          "description": "The URL where your customers are redirected to after the payment is submitted."
                         },
                         "declineUrl": {
                           "type": "string",
-                          "description": "The URL where your customers are redirected to when the payment is declined on the third-party side."
+                          "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                         },
                         "executeUrl": {
                           "type": "string",
-                          "description": "The URL where your customers are redirected to when the payment is approved on the third-party side."
+                          "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                         },
                         "thirdId": {
                           "type": "string",
@@ -1373,17 +1365,13 @@
                         },
                         "signature": {
                           "type": "string",
-                          "description": "The signature of the webhook message received when the payment is completed."
+                          "description": "The signature of the webhook message received after the payment is completed."
                         }
                       }
                     },
                     "createdAt": {
                       "type": "string",
                       "description": "Time at which the payment was created."
-                    },
-                    "claimedAt": {
-                      "type": "string",
-                      "description": "Time at which the payment was claimed."
                     },
                     "canceledAt": {
                       "type": "string",
@@ -1727,11 +1715,11 @@
                         },
                         "cancelUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to when the payment is canceled."
+                          "description": "The URL to redirect your customers to after the payment is canceled."
                         },
                         "successUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to when the payment is executed."
+                          "description": "The URL to redirect your customers to after the payment is executed."
                         },
                         "billing": {
                           "title": "Billing",
@@ -1740,19 +1728,19 @@
                           "properties": {
                             "submitUrl": {
                               "type": "string",
-                              "description": "The URL to redirect your customers to when the payment is claimed."
+                              "description": "The URL to redirect your customers to after the payment is created."
                             },
                             "approvalUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is submitted."
+                              "description": "The URL where your customers are redirected to after the payment is submitted."
                             },
                             "declineUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is declined on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                             },
                             "executeUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is approved on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                             },
                             "thirdId": {
                               "type": "string",
@@ -1772,17 +1760,13 @@
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received when the payment is completed."
+                              "description": "The signature of the webhook message received after the payment is completed."
                             }
                           }
                         },
                         "createdAt": {
                           "type": "string",
                           "description": "Time at which the payment was created."
-                        },
-                        "claimedAt": {
-                          "type": "string",
-                          "description": "Time at which the payment was claimed."
                         },
                         "canceledAt": {
                           "type": "string",
@@ -2154,11 +2138,11 @@
                         },
                         "cancelUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to when the payment is canceled."
+                          "description": "The URL to redirect your customers to after the payment is canceled."
                         },
                         "successUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to when the payment is executed."
+                          "description": "The URL to redirect your customers to after the payment is executed."
                         },
                         "billing": {
                           "title": "Billing",
@@ -2167,19 +2151,19 @@
                           "properties": {
                             "submitUrl": {
                               "type": "string",
-                              "description": "The URL to redirect your customers to when the payment is claimed."
+                              "description": "The URL to redirect your customers to after the payment is created."
                             },
                             "approvalUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is submitted."
+                              "description": "The URL where your customers are redirected to after the payment is submitted."
                             },
                             "declineUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is declined on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                             },
                             "executeUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to when the payment is approved on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                             },
                             "thirdId": {
                               "type": "string",
@@ -2199,17 +2183,13 @@
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received when the payment is completed."
+                              "description": "The signature of the webhook message received after the payment is completed."
                             }
                           }
                         },
                         "createdAt": {
                           "type": "string",
                           "description": "Time at which the payment was created."
-                        },
-                        "claimedAt": {
-                          "type": "string",
-                          "description": "Time at which the payment was claimed."
                         },
                         "canceledAt": {
                           "type": "string",
