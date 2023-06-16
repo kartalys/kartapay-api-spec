@@ -2291,6 +2291,9 @@
           "401": {
             "description": "Unauthorized"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -2350,6 +2353,9 @@
           "401": {
             "description": "Unauthorized"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -2367,7 +2373,7 @@
         ]
       }
     },
-    "/v1/webhooks/paypal": {
+    "/v1/webhooks/payments/paypal": {
       "post": {
         "operationId": "WebhookController_paypal",
         "summary": "Complete a PayPal payment",
@@ -2391,6 +2397,9 @@
           "401": {
             "description": "Unauthorized"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -2408,7 +2417,7 @@
         ]
       }
     },
-    "/v1/webhooks/stripe": {
+    "/v1/webhooks/payments/stripe": {
       "post": {
         "operationId": "WebhookController_stripe",
         "summary": "Complete a Stripe payment",
@@ -2431,6 +2440,9 @@
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           },
           "404": {
             "description": "Not Found"
