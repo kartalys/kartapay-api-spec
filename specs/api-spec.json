@@ -486,7 +486,7 @@
                               "type": "string",
                               "description": "The URL to redirect your customers to after the payment is created."
                             },
-                            "approvalUrl": {
+                            "approveUrl": {
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is submitted."
                             },
@@ -511,12 +511,12 @@
                               "description": "The payment data created on the third-party side."
                             },
                             "proof": {
-                              "type": "object",
+                              "type": "string",
                               "description": "The proof of identity of the payment approver."
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received after the payment is completed."
+                              "description": "The signature of the webhook message received after the payment is completed on the third-party side."
                             }
                           }
                         },
@@ -898,7 +898,7 @@
                                 "type": "string",
                                 "description": "The URL to redirect your customers to after the payment is created."
                               },
-                              "approvalUrl": {
+                              "approveUrl": {
                                 "type": "string",
                                 "description": "The URL where your customers are redirected to after the payment is submitted."
                               },
@@ -923,12 +923,12 @@
                                 "description": "The payment data created on the third-party side."
                               },
                               "proof": {
-                                "type": "object",
+                                "type": "string",
                                 "description": "The proof of identity of the payment approver."
                               },
                               "signature": {
                                 "type": "string",
-                                "description": "The signature of the webhook message received after the payment is completed."
+                                "description": "The signature of the webhook message received after the payment is completed on the third-party side."
                               }
                             }
                           },
@@ -1292,7 +1292,7 @@
                           "type": "string",
                           "description": "The URL to redirect your customers to after the payment is created."
                         },
-                        "approvalUrl": {
+                        "approveUrl": {
                           "type": "string",
                           "description": "The URL where your customers are redirected to after the payment is submitted."
                         },
@@ -1317,12 +1317,12 @@
                           "description": "The payment data created on the third-party side."
                         },
                         "proof": {
-                          "type": "object",
+                          "type": "string",
                           "description": "The proof of identity of the payment approver."
                         },
                         "signature": {
                           "type": "string",
-                          "description": "The signature of the webhook message received after the payment is completed."
+                          "description": "The signature of the webhook message received after the payment is completed on the third-party side."
                         }
                       }
                     },
@@ -1673,7 +1673,7 @@
                               "type": "string",
                               "description": "The URL to redirect your customers to after the payment is created."
                             },
-                            "approvalUrl": {
+                            "approveUrl": {
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is submitted."
                             },
@@ -1698,12 +1698,12 @@
                               "description": "The payment data created on the third-party side."
                             },
                             "proof": {
-                              "type": "object",
+                              "type": "string",
                               "description": "The proof of identity of the payment approver."
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received after the payment is completed."
+                              "description": "The signature of the webhook message received after the payment is completed on the third-party side."
                             }
                           }
                         },
@@ -2082,7 +2082,7 @@
                               "type": "string",
                               "description": "The URL to redirect your customers to after the payment is created."
                             },
-                            "approvalUrl": {
+                            "approveUrl": {
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is submitted."
                             },
@@ -2107,12 +2107,12 @@
                               "description": "The payment data created on the third-party side."
                             },
                             "proof": {
-                              "type": "object",
+                              "type": "string",
                               "description": "The proof of identity of the payment approver."
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received after the payment is completed."
+                              "description": "The signature of the webhook message received after the payment is completed on the third-party side."
                             }
                           }
                         },
