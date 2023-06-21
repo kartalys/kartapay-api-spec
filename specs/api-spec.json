@@ -40,29 +40,29 @@
                   "payer": {
                     "title": "Payer",
                     "type": "object",
-                    "description": "The customer's billing data.",
+                    "description": "The payer's billing data.",
                     "properties": {
                       "firstName": {
                         "type": "string",
-                        "description": "The customer’s first name."
+                        "description": "The payer's first name."
                       },
                       "lastName": {
                         "type": "string",
-                        "description": "The customer’s last name."
+                        "description": "The payer's last name."
                       },
                       "email": {
                         "type": "string",
-                        "description": "The customer’s email."
+                        "description": "The payer's email."
                       },
                       "phone": {
                         "type": "string",
-                        "description": "The customer’s phone number. This must be E.164 Standard for international telephone number",
+                        "description": "The payer's phone number. This must be E.164 Standard for international telephone number",
                         "pattern": "/^\\+[0-9]+$/"
                       },
                       "address": {
                         "title": "Address",
                         "type": "object",
-                        "description": "The customer’s address.",
+                        "description": "The payer's address.",
                         "properties": {
                           "line1": {
                             "type": "string",
@@ -103,14 +103,13 @@
                     "required": [
                       "firstName",
                       "lastName",
-                      "email",
-                      "address"
+                      "email"
                     ]
                   },
                   "purchase": {
                     "title": "Purchase",
                     "type": "object",
-                    "description": "The customer's purchase data.",
+                    "description": "The purchase data.",
                     "properties": {
                       "total": {
                         "title": "Amount",
@@ -137,7 +136,7 @@
                         "items": {
                           "title": "PurchaseItem",
                           "type": "object",
-                          "description": "A customer's purchase item.",
+                          "description": "A purchase item.",
                           "properties": {
                             "name": {
                               "type": "string",
@@ -190,11 +189,11 @@
                   "plan": {
                     "title": "Plan",
                     "type": "object",
-                    "description": "The customer's payment plan.",
+                    "description": "The payment plan.",
                     "properties": {
                       "source": {
                         "type": "string",
-                        "description": "The customer's suited gateway for the payment.",
+                        "description": "The payer's suited gateway for the payment.",
                         "enum": [
                           "HOL",
                           "HRM",
@@ -274,74 +273,38 @@
                           "type": "object",
                           "description": "The payee data.",
                           "properties": {
-                            "name": {
+                            "fullName": {
                               "type": "string",
-                              "description": "The payee's name"
-                            },
-                            "plan": {
-                              "title": "Plan",
-                              "type": "object",
-                              "description": "The payee's payment plan.",
-                              "properties": {
-                                "sources": {
-                                  "type": "array",
-                                  "description": "The payee's suitable gateways for the payment.",
-                                  "items": {
-                                    "type": "object",
-                                    "description": "A payee's payment gateway.",
-                                    "properties": {
-                                      "gateway": {
-                                        "title": "Gateway",
-                                        "type": "object",
-                                        "description": "A payment gateway.",
-                                        "properties": {
-                                          "code": {
-                                            "type": "string",
-                                            "description": "The code of the gateway."
-                                          },
-                                          "name": {
-                                            "type": "string",
-                                            "description": "The name of the gateway."
-                                          },
-                                          "image": {
-                                            "type": "string",
-                                            "description": "The URL of the gateway image."
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
+                              "description": "The payee's full name"
                             }
                           }
                         },
                         "payer": {
                           "title": "Payer",
                           "type": "object",
-                          "description": "The customer's billing data.",
+                          "description": "The payer's billing data.",
                           "properties": {
                             "firstName": {
                               "type": "string",
-                              "description": "The customer’s first name."
+                              "description": "The payer's first name."
                             },
                             "lastName": {
                               "type": "string",
-                              "description": "The customer’s last name."
+                              "description": "The payer's last name."
                             },
                             "email": {
                               "type": "string",
-                              "description": "The customer’s email."
+                              "description": "The payer's email."
                             },
                             "phone": {
                               "type": "string",
-                              "description": "The customer’s phone number. This must be E.164 Standard for international telephone number",
+                              "description": "The payer's phone number. This must be E.164 Standard for international telephone number",
                               "pattern": "/^\\+[0-9]+$/"
                             },
                             "address": {
                               "title": "Address",
                               "type": "object",
-                              "description": "The customer’s address.",
+                              "description": "The payer's address.",
                               "properties": {
                                 "line1": {
                                   "type": "string",
@@ -382,14 +345,13 @@
                           "required": [
                             "firstName",
                             "lastName",
-                            "email",
-                            "address"
+                            "email"
                           ]
                         },
                         "purchase": {
                           "title": "Purchase",
                           "type": "object",
-                          "description": "The customer's purchase data.",
+                          "description": "The purchase data.",
                           "properties": {
                             "total": {
                               "title": "Amount",
@@ -416,7 +378,7 @@
                               "items": {
                                 "title": "PurchaseItem",
                                 "type": "object",
-                                "description": "A customer's purchase item.",
+                                "description": "A purchase item.",
                                 "properties": {
                                   "name": {
                                     "type": "string",
@@ -469,11 +431,34 @@
                         "plan": {
                           "title": "Plan",
                           "type": "object",
-                          "description": "The customer's payment plan.",
+                          "description": "The payment plan.",
                           "properties": {
+                            "options": {
+                              "type": "array",
+                              "description": "The payee's available gateways for the payment.",
+                              "items": {
+                                "title": "Gateway",
+                                "type": "object",
+                                "description": "A payment gateway.",
+                                "properties": {
+                                  "code": {
+                                    "type": "string",
+                                    "description": "The code of the gateway."
+                                  },
+                                  "name": {
+                                    "type": "string",
+                                    "description": "The name of the gateway."
+                                  },
+                                  "image": {
+                                    "type": "string",
+                                    "description": "The URL of the gateway image."
+                                  }
+                                }
+                              }
+                            },
                             "source": {
                               "type": "string",
-                              "description": "The customer's suited gateway for the payment.",
+                              "description": "The payer's suited gateway for the payment.",
                               "enum": [
                                 "HOL",
                                 "HRM",
@@ -700,74 +685,38 @@
                             "type": "object",
                             "description": "The payee data.",
                             "properties": {
-                              "name": {
+                              "fullName": {
                                 "type": "string",
-                                "description": "The payee's name"
-                              },
-                              "plan": {
-                                "title": "Plan",
-                                "type": "object",
-                                "description": "The payee's payment plan.",
-                                "properties": {
-                                  "sources": {
-                                    "type": "array",
-                                    "description": "The payee's suitable gateways for the payment.",
-                                    "items": {
-                                      "type": "object",
-                                      "description": "A payee's payment gateway.",
-                                      "properties": {
-                                        "gateway": {
-                                          "title": "Gateway",
-                                          "type": "object",
-                                          "description": "A payment gateway.",
-                                          "properties": {
-                                            "code": {
-                                              "type": "string",
-                                              "description": "The code of the gateway."
-                                            },
-                                            "name": {
-                                              "type": "string",
-                                              "description": "The name of the gateway."
-                                            },
-                                            "image": {
-                                              "type": "string",
-                                              "description": "The URL of the gateway image."
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
+                                "description": "The payee's full name"
                               }
                             }
                           },
                           "payer": {
                             "title": "Payer",
                             "type": "object",
-                            "description": "The customer's billing data.",
+                            "description": "The payer's billing data.",
                             "properties": {
                               "firstName": {
                                 "type": "string",
-                                "description": "The customer’s first name."
+                                "description": "The payer's first name."
                               },
                               "lastName": {
                                 "type": "string",
-                                "description": "The customer’s last name."
+                                "description": "The payer's last name."
                               },
                               "email": {
                                 "type": "string",
-                                "description": "The customer’s email."
+                                "description": "The payer's email."
                               },
                               "phone": {
                                 "type": "string",
-                                "description": "The customer’s phone number. This must be E.164 Standard for international telephone number",
+                                "description": "The payer's phone number. This must be E.164 Standard for international telephone number",
                                 "pattern": "/^\\+[0-9]+$/"
                               },
                               "address": {
                                 "title": "Address",
                                 "type": "object",
-                                "description": "The customer’s address.",
+                                "description": "The payer's address.",
                                 "properties": {
                                   "line1": {
                                     "type": "string",
@@ -808,14 +757,13 @@
                             "required": [
                               "firstName",
                               "lastName",
-                              "email",
-                              "address"
+                              "email"
                             ]
                           },
                           "purchase": {
                             "title": "Purchase",
                             "type": "object",
-                            "description": "The customer's purchase data.",
+                            "description": "The purchase data.",
                             "properties": {
                               "total": {
                                 "title": "Amount",
@@ -842,7 +790,7 @@
                                 "items": {
                                   "title": "PurchaseItem",
                                   "type": "object",
-                                  "description": "A customer's purchase item.",
+                                  "description": "A purchase item.",
                                   "properties": {
                                     "name": {
                                       "type": "string",
@@ -895,11 +843,34 @@
                           "plan": {
                             "title": "Plan",
                             "type": "object",
-                            "description": "The customer's payment plan.",
+                            "description": "The payment plan.",
                             "properties": {
+                              "options": {
+                                "type": "array",
+                                "description": "The payee's available gateways for the payment.",
+                                "items": {
+                                  "title": "Gateway",
+                                  "type": "object",
+                                  "description": "A payment gateway.",
+                                  "properties": {
+                                    "code": {
+                                      "type": "string",
+                                      "description": "The code of the gateway."
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "description": "The name of the gateway."
+                                    },
+                                    "image": {
+                                      "type": "string",
+                                      "description": "The URL of the gateway image."
+                                    }
+                                  }
+                                }
+                              },
                               "source": {
                                 "type": "string",
-                                "description": "The customer's suited gateway for the payment.",
+                                "description": "The payer's suited gateway for the payment.",
                                 "enum": [
                                   "HOL",
                                   "HRM",
@@ -1108,74 +1079,38 @@
                       "type": "object",
                       "description": "The payee data.",
                       "properties": {
-                        "name": {
+                        "fullName": {
                           "type": "string",
-                          "description": "The payee's name"
-                        },
-                        "plan": {
-                          "title": "Plan",
-                          "type": "object",
-                          "description": "The payee's payment plan.",
-                          "properties": {
-                            "sources": {
-                              "type": "array",
-                              "description": "The payee's suitable gateways for the payment.",
-                              "items": {
-                                "type": "object",
-                                "description": "A payee's payment gateway.",
-                                "properties": {
-                                  "gateway": {
-                                    "title": "Gateway",
-                                    "type": "object",
-                                    "description": "A payment gateway.",
-                                    "properties": {
-                                      "code": {
-                                        "type": "string",
-                                        "description": "The code of the gateway."
-                                      },
-                                      "name": {
-                                        "type": "string",
-                                        "description": "The name of the gateway."
-                                      },
-                                      "image": {
-                                        "type": "string",
-                                        "description": "The URL of the gateway image."
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
+                          "description": "The payee's full name"
                         }
                       }
                     },
                     "payer": {
                       "title": "Payer",
                       "type": "object",
-                      "description": "The customer's billing data.",
+                      "description": "The payer's billing data.",
                       "properties": {
                         "firstName": {
                           "type": "string",
-                          "description": "The customer’s first name."
+                          "description": "The payer's first name."
                         },
                         "lastName": {
                           "type": "string",
-                          "description": "The customer’s last name."
+                          "description": "The payer's last name."
                         },
                         "email": {
                           "type": "string",
-                          "description": "The customer’s email."
+                          "description": "The payer's email."
                         },
                         "phone": {
                           "type": "string",
-                          "description": "The customer’s phone number. This must be E.164 Standard for international telephone number",
+                          "description": "The payer's phone number. This must be E.164 Standard for international telephone number",
                           "pattern": "/^\\+[0-9]+$/"
                         },
                         "address": {
                           "title": "Address",
                           "type": "object",
-                          "description": "The customer’s address.",
+                          "description": "The payer's address.",
                           "properties": {
                             "line1": {
                               "type": "string",
@@ -1216,14 +1151,13 @@
                       "required": [
                         "firstName",
                         "lastName",
-                        "email",
-                        "address"
+                        "email"
                       ]
                     },
                     "purchase": {
                       "title": "Purchase",
                       "type": "object",
-                      "description": "The customer's purchase data.",
+                      "description": "The purchase data.",
                       "properties": {
                         "total": {
                           "title": "Amount",
@@ -1250,7 +1184,7 @@
                           "items": {
                             "title": "PurchaseItem",
                             "type": "object",
-                            "description": "A customer's purchase item.",
+                            "description": "A purchase item.",
                             "properties": {
                               "name": {
                                 "type": "string",
@@ -1303,11 +1237,34 @@
                     "plan": {
                       "title": "Plan",
                       "type": "object",
-                      "description": "The customer's payment plan.",
+                      "description": "The payment plan.",
                       "properties": {
+                        "options": {
+                          "type": "array",
+                          "description": "The payee's available gateways for the payment.",
+                          "items": {
+                            "title": "Gateway",
+                            "type": "object",
+                            "description": "A payment gateway.",
+                            "properties": {
+                              "code": {
+                                "type": "string",
+                                "description": "The code of the gateway."
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "The name of the gateway."
+                              },
+                              "image": {
+                                "type": "string",
+                                "description": "The URL of the gateway image."
+                              }
+                            }
+                          }
+                        },
                         "source": {
                           "type": "string",
-                          "description": "The customer's suited gateway for the payment.",
+                          "description": "The payer's suited gateway for the payment.",
                           "enum": [
                             "HOL",
                             "HRM",
@@ -1503,74 +1460,38 @@
                           "type": "object",
                           "description": "The payee data.",
                           "properties": {
-                            "name": {
+                            "fullName": {
                               "type": "string",
-                              "description": "The payee's name"
-                            },
-                            "plan": {
-                              "title": "Plan",
-                              "type": "object",
-                              "description": "The payee's payment plan.",
-                              "properties": {
-                                "sources": {
-                                  "type": "array",
-                                  "description": "The payee's suitable gateways for the payment.",
-                                  "items": {
-                                    "type": "object",
-                                    "description": "A payee's payment gateway.",
-                                    "properties": {
-                                      "gateway": {
-                                        "title": "Gateway",
-                                        "type": "object",
-                                        "description": "A payment gateway.",
-                                        "properties": {
-                                          "code": {
-                                            "type": "string",
-                                            "description": "The code of the gateway."
-                                          },
-                                          "name": {
-                                            "type": "string",
-                                            "description": "The name of the gateway."
-                                          },
-                                          "image": {
-                                            "type": "string",
-                                            "description": "The URL of the gateway image."
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
+                              "description": "The payee's full name"
                             }
                           }
                         },
                         "payer": {
                           "title": "Payer",
                           "type": "object",
-                          "description": "The customer's billing data.",
+                          "description": "The payer's billing data.",
                           "properties": {
                             "firstName": {
                               "type": "string",
-                              "description": "The customer’s first name."
+                              "description": "The payer's first name."
                             },
                             "lastName": {
                               "type": "string",
-                              "description": "The customer’s last name."
+                              "description": "The payer's last name."
                             },
                             "email": {
                               "type": "string",
-                              "description": "The customer’s email."
+                              "description": "The payer's email."
                             },
                             "phone": {
                               "type": "string",
-                              "description": "The customer’s phone number. This must be E.164 Standard for international telephone number",
+                              "description": "The payer's phone number. This must be E.164 Standard for international telephone number",
                               "pattern": "/^\\+[0-9]+$/"
                             },
                             "address": {
                               "title": "Address",
                               "type": "object",
-                              "description": "The customer’s address.",
+                              "description": "The payer's address.",
                               "properties": {
                                 "line1": {
                                   "type": "string",
@@ -1611,14 +1532,13 @@
                           "required": [
                             "firstName",
                             "lastName",
-                            "email",
-                            "address"
+                            "email"
                           ]
                         },
                         "purchase": {
                           "title": "Purchase",
                           "type": "object",
-                          "description": "The customer's purchase data.",
+                          "description": "The purchase data.",
                           "properties": {
                             "total": {
                               "title": "Amount",
@@ -1645,7 +1565,7 @@
                               "items": {
                                 "title": "PurchaseItem",
                                 "type": "object",
-                                "description": "A customer's purchase item.",
+                                "description": "A purchase item.",
                                 "properties": {
                                   "name": {
                                     "type": "string",
@@ -1698,11 +1618,34 @@
                         "plan": {
                           "title": "Plan",
                           "type": "object",
-                          "description": "The customer's payment plan.",
+                          "description": "The payment plan.",
                           "properties": {
+                            "options": {
+                              "type": "array",
+                              "description": "The payee's available gateways for the payment.",
+                              "items": {
+                                "title": "Gateway",
+                                "type": "object",
+                                "description": "A payment gateway.",
+                                "properties": {
+                                  "code": {
+                                    "type": "string",
+                                    "description": "The code of the gateway."
+                                  },
+                                  "name": {
+                                    "type": "string",
+                                    "description": "The name of the gateway."
+                                  },
+                                  "image": {
+                                    "type": "string",
+                                    "description": "The URL of the gateway image."
+                                  }
+                                }
+                              }
+                            },
                             "source": {
                               "type": "string",
-                              "description": "The customer's suited gateway for the payment.",
+                              "description": "The payer's suited gateway for the payment.",
                               "enum": [
                                 "HOL",
                                 "HRM",
@@ -1851,17 +1794,17 @@
         ],
         "requestBody": {
           "required": true,
-          "description": "The customer's payment plan.",
+          "description": "The payment plan.",
           "content": {
             "application/json": {
               "schema": {
                 "title": "Plan",
                 "type": "object",
-                "description": "The customer's payment plan.",
+                "description": "The payment plan.",
                 "properties": {
                   "source": {
                     "type": "string",
-                    "description": "The customer's suited gateway for the payment.",
+                    "description": "The payer's suited gateway for the payment.",
                     "enum": [
                       "HOL",
                       "HRM",
@@ -1926,74 +1869,38 @@
                           "type": "object",
                           "description": "The payee data.",
                           "properties": {
-                            "name": {
+                            "fullName": {
                               "type": "string",
-                              "description": "The payee's name"
-                            },
-                            "plan": {
-                              "title": "Plan",
-                              "type": "object",
-                              "description": "The payee's payment plan.",
-                              "properties": {
-                                "sources": {
-                                  "type": "array",
-                                  "description": "The payee's suitable gateways for the payment.",
-                                  "items": {
-                                    "type": "object",
-                                    "description": "A payee's payment gateway.",
-                                    "properties": {
-                                      "gateway": {
-                                        "title": "Gateway",
-                                        "type": "object",
-                                        "description": "A payment gateway.",
-                                        "properties": {
-                                          "code": {
-                                            "type": "string",
-                                            "description": "The code of the gateway."
-                                          },
-                                          "name": {
-                                            "type": "string",
-                                            "description": "The name of the gateway."
-                                          },
-                                          "image": {
-                                            "type": "string",
-                                            "description": "The URL of the gateway image."
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
+                              "description": "The payee's full name"
                             }
                           }
                         },
                         "payer": {
                           "title": "Payer",
                           "type": "object",
-                          "description": "The customer's billing data.",
+                          "description": "The payer's billing data.",
                           "properties": {
                             "firstName": {
                               "type": "string",
-                              "description": "The customer’s first name."
+                              "description": "The payer's first name."
                             },
                             "lastName": {
                               "type": "string",
-                              "description": "The customer’s last name."
+                              "description": "The payer's last name."
                             },
                             "email": {
                               "type": "string",
-                              "description": "The customer’s email."
+                              "description": "The payer's email."
                             },
                             "phone": {
                               "type": "string",
-                              "description": "The customer’s phone number. This must be E.164 Standard for international telephone number",
+                              "description": "The payer's phone number. This must be E.164 Standard for international telephone number",
                               "pattern": "/^\\+[0-9]+$/"
                             },
                             "address": {
                               "title": "Address",
                               "type": "object",
-                              "description": "The customer’s address.",
+                              "description": "The payer's address.",
                               "properties": {
                                 "line1": {
                                   "type": "string",
@@ -2034,14 +1941,13 @@
                           "required": [
                             "firstName",
                             "lastName",
-                            "email",
-                            "address"
+                            "email"
                           ]
                         },
                         "purchase": {
                           "title": "Purchase",
                           "type": "object",
-                          "description": "The customer's purchase data.",
+                          "description": "The purchase data.",
                           "properties": {
                             "total": {
                               "title": "Amount",
@@ -2068,7 +1974,7 @@
                               "items": {
                                 "title": "PurchaseItem",
                                 "type": "object",
-                                "description": "A customer's purchase item.",
+                                "description": "A purchase item.",
                                 "properties": {
                                   "name": {
                                     "type": "string",
@@ -2121,11 +2027,34 @@
                         "plan": {
                           "title": "Plan",
                           "type": "object",
-                          "description": "The customer's payment plan.",
+                          "description": "The payment plan.",
                           "properties": {
+                            "options": {
+                              "type": "array",
+                              "description": "The payee's available gateways for the payment.",
+                              "items": {
+                                "title": "Gateway",
+                                "type": "object",
+                                "description": "A payment gateway.",
+                                "properties": {
+                                  "code": {
+                                    "type": "string",
+                                    "description": "The code of the gateway."
+                                  },
+                                  "name": {
+                                    "type": "string",
+                                    "description": "The name of the gateway."
+                                  },
+                                  "image": {
+                                    "type": "string",
+                                    "description": "The URL of the gateway image."
+                                  }
+                                }
+                              }
+                            },
                             "source": {
                               "type": "string",
-                              "description": "The customer's suited gateway for the payment.",
+                              "description": "The payer's suited gateway for the payment.",
                               "enum": [
                                 "HOL",
                                 "HRM",
