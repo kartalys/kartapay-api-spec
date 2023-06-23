@@ -8,8 +8,8 @@
         "parameters": [
           {
             "name": "Accept-Language",
-            "required": false,
             "in": "header",
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -583,14 +583,6 @@
         "summary": "Read payments",
         "parameters": [
           {
-            "name": "Accept-Language",
-            "required": false,
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "desc",
             "required": false,
             "in": "query",
@@ -628,6 +620,14 @@
             "required": false,
             "in": "query",
             "description": "The pagination offset.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -1018,18 +1018,18 @@
         "summary": "Read a payment",
         "parameters": [
           {
-            "name": "Accept-Language",
-            "required": false,
-            "in": "header",
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the payment.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "description": "The ID of the payment.",
+            "name": "Accept-Language",
+            "in": "header",
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -1392,18 +1392,18 @@
         "summary": "Cancel a payment",
         "parameters": [
           {
-            "name": "Accept-Language",
-            "required": false,
-            "in": "header",
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the payment.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "description": "The ID of the payment.",
+            "name": "Accept-Language",
+            "in": "header",
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -1775,18 +1775,18 @@
         "summary": "Submit a payment",
         "parameters": [
           {
-            "name": "Accept-Language",
-            "required": false,
-            "in": "header",
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the payment.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "description": "The ID of the payment.",
+            "name": "Accept-Language",
+            "in": "header",
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -2184,14 +2184,6 @@
         "summary": "Decline a payment",
         "parameters": [
           {
-            "name": "Accept-Language",
-            "required": false,
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "id",
             "required": true,
             "in": "path",
@@ -2205,6 +2197,14 @@
             "required": true,
             "in": "query",
             "description": "The signature of the request.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -2246,14 +2246,6 @@
         "summary": "Execute a payment",
         "parameters": [
           {
-            "name": "Accept-Language",
-            "required": false,
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "id",
             "required": true,
             "in": "path",
@@ -2267,6 +2259,14 @@
             "required": true,
             "in": "query",
             "description": "The signature of the request.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "required": false,
             "schema": {
               "type": "string"
             }
