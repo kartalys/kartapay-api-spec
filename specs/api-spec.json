@@ -583,6 +583,22 @@
         "summary": "Read payments",
         "parameters": [
           {
+            "name": "X-Resource-Span",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "title": "Span",
+              "type": "string",
+              "description": "The resource span.",
+              "enum": [
+                "all",
+                "joint",
+                "owner",
+                "view"
+              ]
+            }
+          },
+          {
             "name": "desc",
             "required": false,
             "in": "query",
@@ -1017,6 +1033,22 @@
         "operationId": "PaymentController_findOne",
         "summary": "Read a payment",
         "parameters": [
+          {
+            "name": "X-Resource-Span",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "title": "Span",
+              "type": "string",
+              "description": "The resource span.",
+              "enum": [
+                "all",
+                "joint",
+                "owner",
+                "view"
+              ]
+            }
+          },
           {
             "name": "id",
             "required": true,
