@@ -584,7 +584,7 @@
         "parameters": [
           {
             "name": "X-Resource-Span",
-            "required": true,
+            "required": false,
             "in": "header",
             "schema": {
               "title": "Span",
@@ -592,9 +592,9 @@
               "description": "The resource span.",
               "enum": [
                 "all",
-                "joint",
+                "view",
                 "owner",
-                "view"
+                "joint"
               ]
             }
           },
@@ -1035,7 +1035,7 @@
         "parameters": [
           {
             "name": "X-Resource-Span",
-            "required": true,
+            "required": false,
             "in": "header",
             "schema": {
               "title": "Span",
@@ -1043,9 +1043,9 @@
               "description": "The resource span.",
               "enum": [
                 "all",
-                "joint",
+                "view",
                 "owner",
-                "view"
+                "joint"
               ]
             }
           },
