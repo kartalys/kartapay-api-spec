@@ -42,13 +42,9 @@
                     "type": "object",
                     "description": "The payer's billing data.",
                     "properties": {
-                      "firstName": {
+                      "fullName": {
                         "type": "string",
-                        "description": "The payer's first name."
-                      },
-                      "lastName": {
-                        "type": "string",
-                        "description": "The payer's last name."
+                        "description": "The payer's full name."
                       },
                       "email": {
                         "type": "string",
@@ -284,13 +280,9 @@
                           "type": "object",
                           "description": "The payer's billing data.",
                           "properties": {
-                            "firstName": {
+                            "fullName": {
                               "type": "string",
-                              "description": "The payer's first name."
-                            },
-                            "lastName": {
-                              "type": "string",
-                              "description": "The payer's last name."
+                              "description": "The payer's full name."
                             },
                             "email": {
                               "type": "string",
@@ -712,13 +704,9 @@
                             "type": "object",
                             "description": "The payer's billing data.",
                             "properties": {
-                              "firstName": {
+                              "fullName": {
                                 "type": "string",
-                                "description": "The payer's first name."
-                              },
-                              "lastName": {
-                                "type": "string",
-                                "description": "The payer's last name."
+                                "description": "The payer's full name."
                               },
                               "email": {
                                 "type": "string",
@@ -1122,13 +1110,9 @@
                       "type": "object",
                       "description": "The payer's billing data.",
                       "properties": {
-                        "firstName": {
+                        "fullName": {
                           "type": "string",
-                          "description": "The payer's first name."
-                        },
-                        "lastName": {
-                          "type": "string",
-                          "description": "The payer's last name."
+                          "description": "The payer's full name."
                         },
                         "email": {
                           "type": "string",
@@ -1503,13 +1487,9 @@
                           "type": "object",
                           "description": "The payer's billing data.",
                           "properties": {
-                            "firstName": {
+                            "fullName": {
                               "type": "string",
-                              "description": "The payer's first name."
-                            },
-                            "lastName": {
-                              "type": "string",
-                              "description": "The payer's last name."
+                              "description": "The payer's full name."
                             },
                             "email": {
                               "type": "string",
@@ -1912,13 +1892,9 @@
                           "type": "object",
                           "description": "The payer's billing data.",
                           "properties": {
-                            "firstName": {
+                            "fullName": {
                               "type": "string",
-                              "description": "The payer's first name."
-                            },
-                            "lastName": {
-                              "type": "string",
-                              "description": "The payer's last name."
+                              "description": "The payer's full name."
                             },
                             "email": {
                               "type": "string",
