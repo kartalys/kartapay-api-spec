@@ -193,7 +193,8 @@
                         "enum": [
                           "HOL",
                           "HRM",
-                          "MVL",
+                          "MVK",
+                          "MVM",
                           "PYP",
                           "STR"
                         ]
@@ -206,7 +207,7 @@
                   },
                   "successUrl": {
                     "type": "string",
-                    "description": "The URL to redirect your customers to after the payment is executed."
+                    "description": "The URL to redirect your customers to after the payment is captured."
                   }
                 },
                 "required": [
@@ -244,11 +245,12 @@
                             "canceled",
                             "submitted",
                             "approved",
-                            "executed",
+                            "capture",
+                            "failed",
                             "completed"
                           ]
                         },
-                        "paid": {
+                        "captured": {
                           "type": "boolean",
                           "description": "An indicator that the payment was successfully captured."
                         },
@@ -454,7 +456,8 @@
                               "enum": [
                                 "HOL",
                                 "HRM",
-                                "MVL",
+                                "MVK",
+                                "MVM",
                                 "PYP",
                                 "STR"
                               ]
@@ -467,7 +470,7 @@
                         },
                         "successUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to after the payment is executed."
+                          "description": "The URL to redirect your customers to after the payment is captured."
                         },
                         "billing": {
                           "title": "Billing",
@@ -486,7 +489,7 @@
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                             },
-                            "executeUrl": {
+                            "captureUrl": {
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                             },
@@ -494,7 +497,7 @@
                               "type": "string",
                               "description": "A unique string to reference the payment on the third-party side."
                             },
-                            "events": {
+                            "traces": {
                               "type": "array",
                               "description": "The transactions received from the third-party side."
                             },
@@ -528,9 +531,13 @@
                           "type": "string",
                           "description": "Time at which the payment was approved."
                         },
-                        "executedAt": {
+                        "capturedAt": {
                           "type": "string",
-                          "description": "Time at which the payment was executed."
+                          "description": "Time at which the payment was captured."
+                        },
+                        "failedAt": {
+                          "type": "string",
+                          "description": "Time at which the payment was failed."
                         },
                         "completedAt": {
                           "type": "string",
@@ -668,11 +675,12 @@
                               "canceled",
                               "submitted",
                               "approved",
-                              "executed",
+                              "capture",
+                              "failed",
                               "completed"
                             ]
                           },
-                          "paid": {
+                          "captured": {
                             "type": "boolean",
                             "description": "An indicator that the payment was successfully captured."
                           },
@@ -878,7 +886,8 @@
                                 "enum": [
                                   "HOL",
                                   "HRM",
-                                  "MVL",
+                                  "MVK",
+                                  "MVM",
                                   "PYP",
                                   "STR"
                                 ]
@@ -891,7 +900,7 @@
                           },
                           "successUrl": {
                             "type": "string",
-                            "description": "The URL to redirect your customers to after the payment is executed."
+                            "description": "The URL to redirect your customers to after the payment is captured."
                           },
                           "billing": {
                             "title": "Billing",
@@ -910,7 +919,7 @@
                                 "type": "string",
                                 "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                               },
-                              "executeUrl": {
+                              "captureUrl": {
                                 "type": "string",
                                 "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                               },
@@ -918,7 +927,7 @@
                                 "type": "string",
                                 "description": "A unique string to reference the payment on the third-party side."
                               },
-                              "events": {
+                              "traces": {
                                 "type": "array",
                                 "description": "The transactions received from the third-party side."
                               },
@@ -952,9 +961,13 @@
                             "type": "string",
                             "description": "Time at which the payment was approved."
                           },
-                          "executedAt": {
+                          "capturedAt": {
                             "type": "string",
-                            "description": "Time at which the payment was executed."
+                            "description": "Time at which the payment was captured."
+                          },
+                          "failedAt": {
+                            "type": "string",
+                            "description": "Time at which the payment was failed."
                           },
                           "completedAt": {
                             "type": "string",
@@ -1074,11 +1087,12 @@
                         "canceled",
                         "submitted",
                         "approved",
-                        "executed",
+                        "capture",
+                        "failed",
                         "completed"
                       ]
                     },
-                    "paid": {
+                    "captured": {
                       "type": "boolean",
                       "description": "An indicator that the payment was successfully captured."
                     },
@@ -1284,7 +1298,8 @@
                           "enum": [
                             "HOL",
                             "HRM",
-                            "MVL",
+                            "MVK",
+                            "MVM",
                             "PYP",
                             "STR"
                           ]
@@ -1297,7 +1312,7 @@
                     },
                     "successUrl": {
                       "type": "string",
-                      "description": "The URL to redirect your customers to after the payment is executed."
+                      "description": "The URL to redirect your customers to after the payment is captured."
                     },
                     "billing": {
                       "title": "Billing",
@@ -1316,7 +1331,7 @@
                           "type": "string",
                           "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                         },
-                        "executeUrl": {
+                        "captureUrl": {
                           "type": "string",
                           "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                         },
@@ -1324,7 +1339,7 @@
                           "type": "string",
                           "description": "A unique string to reference the payment on the third-party side."
                         },
-                        "events": {
+                        "traces": {
                           "type": "array",
                           "description": "The transactions received from the third-party side."
                         },
@@ -1358,9 +1373,13 @@
                       "type": "string",
                       "description": "Time at which the payment was approved."
                     },
-                    "executedAt": {
+                    "capturedAt": {
                       "type": "string",
-                      "description": "Time at which the payment was executed."
+                      "description": "Time at which the payment was captured."
+                    },
+                    "failedAt": {
+                      "type": "string",
+                      "description": "Time at which the payment was failed."
                     },
                     "completedAt": {
                       "type": "string",
@@ -1451,11 +1470,12 @@
                             "canceled",
                             "submitted",
                             "approved",
-                            "executed",
+                            "capture",
+                            "failed",
                             "completed"
                           ]
                         },
-                        "paid": {
+                        "captured": {
                           "type": "boolean",
                           "description": "An indicator that the payment was successfully captured."
                         },
@@ -1661,7 +1681,8 @@
                               "enum": [
                                 "HOL",
                                 "HRM",
-                                "MVL",
+                                "MVK",
+                                "MVM",
                                 "PYP",
                                 "STR"
                               ]
@@ -1674,7 +1695,7 @@
                         },
                         "successUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to after the payment is executed."
+                          "description": "The URL to redirect your customers to after the payment is captured."
                         },
                         "billing": {
                           "title": "Billing",
@@ -1693,7 +1714,7 @@
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                             },
-                            "executeUrl": {
+                            "captureUrl": {
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                             },
@@ -1701,7 +1722,7 @@
                               "type": "string",
                               "description": "A unique string to reference the payment on the third-party side."
                             },
-                            "events": {
+                            "traces": {
                               "type": "array",
                               "description": "The transactions received from the third-party side."
                             },
@@ -1735,9 +1756,13 @@
                           "type": "string",
                           "description": "Time at which the payment was approved."
                         },
-                        "executedAt": {
+                        "capturedAt": {
                           "type": "string",
-                          "description": "Time at which the payment was executed."
+                          "description": "Time at which the payment was captured."
+                        },
+                        "failedAt": {
+                          "type": "string",
+                          "description": "Time at which the payment was failed."
                         },
                         "completedAt": {
                           "type": "string",
@@ -1820,7 +1845,8 @@
                     "enum": [
                       "HOL",
                       "HRM",
-                      "MVL",
+                      "MVK",
+                      "MVM",
                       "PYP",
                       "STR"
                     ]
@@ -1856,11 +1882,12 @@
                             "canceled",
                             "submitted",
                             "approved",
-                            "executed",
+                            "capture",
+                            "failed",
                             "completed"
                           ]
                         },
-                        "paid": {
+                        "captured": {
                           "type": "boolean",
                           "description": "An indicator that the payment was successfully captured."
                         },
@@ -2066,7 +2093,8 @@
                               "enum": [
                                 "HOL",
                                 "HRM",
-                                "MVL",
+                                "MVK",
+                                "MVM",
                                 "PYP",
                                 "STR"
                               ]
@@ -2079,7 +2107,7 @@
                         },
                         "successUrl": {
                           "type": "string",
-                          "description": "The URL to redirect your customers to after the payment is executed."
+                          "description": "The URL to redirect your customers to after the payment is captured."
                         },
                         "billing": {
                           "title": "Billing",
@@ -2098,7 +2126,7 @@
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
                             },
-                            "executeUrl": {
+                            "captureUrl": {
                               "type": "string",
                               "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
                             },
@@ -2106,7 +2134,7 @@
                               "type": "string",
                               "description": "A unique string to reference the payment on the third-party side."
                             },
-                            "events": {
+                            "traces": {
                               "type": "array",
                               "description": "The transactions received from the third-party side."
                             },
@@ -2140,9 +2168,13 @@
                           "type": "string",
                           "description": "Time at which the payment was approved."
                         },
-                        "executedAt": {
+                        "capturedAt": {
                           "type": "string",
-                          "description": "Time at which the payment was executed."
+                          "description": "Time at which the payment was captured."
+                        },
+                        "failedAt": {
+                          "type": "string",
+                          "description": "Time at which the payment was failed."
                         },
                         "completedAt": {
                           "type": "string",
@@ -2248,10 +2280,10 @@
         ]
       }
     },
-    "/v1/payments/{id}/execute": {
+    "/v1/payments/{id}/capture": {
       "get": {
-        "operationId": "PaymentController_execute",
-        "summary": "Execute a payment",
+        "operationId": "PaymentController_capture",
+        "summary": "Capture a payment",
         "parameters": [
           {
             "name": "id",
@@ -2310,10 +2342,45 @@
         ]
       }
     },
+    "/v1/webhooks/payments/mvola-mg": {
+      "put": {
+        "operationId": "WebhookController_mvolaMg",
+        "summary": "Handle a MVola payment webhook",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Webhooks"
+        ],
+        "security": [
+          {
+            "HttpBasic": []
+          }
+        ]
+      }
+    },
     "/v1/webhooks/payments/paypal": {
       "post": {
         "operationId": "WebhookController_paypal",
-        "summary": "Complete a PayPal payment",
+        "summary": "Handle a PayPal payment webhook",
         "parameters": [
           {
             "name": "PAYPAL-TRANSMISSION-SIG",
@@ -2357,7 +2424,7 @@
     "/v1/webhooks/payments/stripe": {
       "post": {
         "operationId": "WebhookController_stripe",
-        "summary": "Complete a Stripe payment",
+        "summary": "Handle a Stripe payment webhook",
         "parameters": [
           {
             "name": "Stripe-Signature",
