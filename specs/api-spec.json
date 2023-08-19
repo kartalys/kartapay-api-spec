@@ -245,7 +245,7 @@
                             "canceled",
                             "submitted",
                             "approved",
-                            "capture",
+                            "captured",
                             "failed",
                             "completed"
                           ]
@@ -675,7 +675,7 @@
                               "canceled",
                               "submitted",
                               "approved",
-                              "capture",
+                              "captured",
                               "failed",
                               "completed"
                             ]
@@ -1087,7 +1087,7 @@
                         "canceled",
                         "submitted",
                         "approved",
-                        "capture",
+                        "captured",
                         "failed",
                         "completed"
                       ]
@@ -1470,7 +1470,7 @@
                             "canceled",
                             "submitted",
                             "approved",
-                            "capture",
+                            "captured",
                             "failed",
                             "completed"
                           ]
@@ -1882,7 +1882,7 @@
                             "canceled",
                             "submitted",
                             "approved",
-                            "capture",
+                            "captured",
                             "failed",
                             "completed"
                           ]
@@ -2338,6 +2338,41 @@
         "security": [
           {
             "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/webhooks/payments/holo": {
+      "get": {
+        "operationId": "WebhookController_holo",
+        "summary": "Handle a Holo payment webhook",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Webhooks"
+        ],
+        "security": [
+          {
+            "HttpBasic": []
           }
         ]
       }
