@@ -1,2 +1,2 @@
-# foulsy-api-spec
-Foulsy payment provider API spec
+# kartapay-api-spec
+KartaPay API spec
