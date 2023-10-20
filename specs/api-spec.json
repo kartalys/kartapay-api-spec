@@ -844,6 +844,53 @@
                               "total"
                             ]
                           },
+                          "fee": {
+                            "title": "Fees",
+                            "type": "object",
+                            "description": "The transaction fees (provider and KartaPay)",
+                            "providerFee": {
+                                "title": "Provider fees",
+                                "type": "object",
+                                "description": "Provider fees",
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
+                                  },
+                                  "currency": {
+                                    "type": "string",
+                                    "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "currency"
+                                ]
+                            },
+                            "kartaPayFee": {
+                              "title": "Kartapay fees",
+                              "type": "object",
+                              "description": "Kartapay fees",
+                              "properties": {
+                                "value": {
+                                  "type": "string",
+                                  "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
+                                },
+                                "currency": {
+                                  "type": "string",
+                                  "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
+                                }
+                              },
+                              "required": [
+                                "value",
+                                "currency"
+                              ]
+                            },
+                            "required": [
+                              "providerFee",
+                              "kartaPayFee"
+                            ]
+                          },
                           "reference": {
                             "type": "string",
                             "description": "A unique string to reference the payment. This can be an order ID, or similar, and can be used to reconcile the payment with your internal systems."
@@ -1254,6 +1301,53 @@
                       },
                       "required": [
                         "total"
+                      ]
+                    },
+                    "fee": {
+                      "title": "Fees",
+                      "type": "object",
+                      "description": "The transaction fees (provider and KartaPay)",
+                      "providerFee": {
+                          "title": "Provider fees",
+                          "type": "object",
+                          "description": "Provider fees",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
+                            },
+                            "currency": {
+                              "type": "string",
+                              "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
+                            }
+                          },
+                          "required": [
+                            "value",
+                            "currency"
+                          ]
+                      },
+                      "kartaPayFee": {
+                        "title": "Kartapay fees",
+                        "type": "object",
+                        "description": "Kartapay fees",
+                        "properties": {
+                          "value": {
+                            "type": "string",
+                            "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
+                          },
+                          "currency": {
+                            "type": "string",
+                            "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "currency"
+                        ]
+                      },
+                      "required": [
+                        "providerFee",
+                        "kartaPayFee"
                       ]
                     },
                     "reference": {
