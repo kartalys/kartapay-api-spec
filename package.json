@@ -15,6 +15,6 @@
   },
   "homepage": "https://github.com/kartalys/kartapay-api-spec#readme",
   "dependencies": {
-    "redoc-cli": "^0.13.20"
+    "redoc-cli": "^0.13.21"
   }
 }
