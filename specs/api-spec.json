@@ -849,23 +849,23 @@
                             "type": "object",
                             "description": "The transaction fees (provider and KartaPay)",
                             "providerFee": {
-                                "title": "Provider fees",
-                                "type": "object",
-                                "description": "Provider fees",
-                                "properties": {
-                                  "value": {
-                                    "type": "string",
-                                    "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
-                                  },
-                                  "currency": {
-                                    "type": "string",
-                                    "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
-                                  }
+                              "title": "Provider fees",
+                              "type": "object",
+                              "description": "Provider fees",
+                              "properties": {
+                                "value": {
+                                  "type": "string",
+                                  "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
                                 },
-                                "required": [
-                                  "value",
-                                  "currency"
-                                ]
+                                "currency": {
+                                  "type": "string",
+                                  "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
+                                }
+                              },
+                              "required": [
+                                "value",
+                                "currency"
+                              ]
                             },
                             "kartaPayFee": {
                               "title": "Kartapay fees",
@@ -1308,23 +1308,23 @@
                       "type": "object",
                       "description": "The transaction fees (provider and KartaPay)",
                       "providerFee": {
-                          "title": "Provider fees",
-                          "type": "object",
-                          "description": "Provider fees",
-                          "properties": {
-                            "value": {
-                              "type": "string",
-                              "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
-                            },
-                            "currency": {
-                              "type": "string",
-                              "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
-                            }
+                        "title": "Provider fees",
+                        "type": "object",
+                        "description": "Provider fees",
+                        "properties": {
+                          "value": {
+                            "type": "string",
+                            "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
                           },
-                          "required": [
-                            "value",
-                            "currency"
-                          ]
+                          "currency": {
+                            "type": "string",
+                            "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "currency"
+                        ]
                       },
                       "kartaPayFee": {
                         "title": "Kartapay fees",
@@ -2593,6 +2593,49 @@
           }
         ]
       }
+    },
+    "/v1/webhooks/payments/mvola-km": {
+      "post": {
+        "operationId": "WebhookController_mvolaKm",
+        "summary": "Handle a mvola KM payment webhook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MvolaKmWebhookBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Webhooks"
+        ],
+        "security": [
+          {
+            "HttpBasic": []
+          }
+        ]
+      }
     }
   },
   "info": {
@@ -2632,6 +2675,49 @@
         "description": "HTTP Bearer authentication with JWT token"
       }
     },
-    "schemas": {}
+    "schemas": {
+      "MvolaKmWebhookBody": {
+        "type": "object",
+        "required": [
+          "operationID",
+          "msisdn",
+          "amount",
+          "description",
+          "status",
+          "transID",
+          "transIDP"
+        ],
+        "properties": {
+          "operationID": {
+            "type": "string",
+            "description": "Operation identification"
+          },
+          "msisdn": {
+            "type": "string",
+            "description": "Sender phone number, Comoros local phone number preceded by country iso code (2694255899)"
+          },
+          "amount": {
+            "type": "number",
+            "description": "Amount to transfer"
+          },
+          "description": {
+            "type": "string",
+            "description": "Operation result"
+          },
+          "status": {
+            "type": "string",
+            "description": "Operation status"
+          },
+          "transID": {
+            "type": "string",
+            "description": "Transaction identification on mobile money platform"
+          },
+          "transIDP": {
+            "type": "string",
+            "description": "Partner Transaction identification"
+          }
+        }
+      }
+    }
   }
 }
