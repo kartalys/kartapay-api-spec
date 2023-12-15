@@ -18,43 +18,24 @@ echo_error() {
 # Step 0: Clean
 # ================
 
-echo "Bootstraping project..."
+echo_success "Bootstrap package: ${PWD##*/}"
 
-echo "Remove node packages..."
+echo "Remove node modules..."
 rm -rf node_modules
 
 
-# Step 1: Node
+# Step 1: Setup package
 # ================
 
-if [ ! -z "${NVM_DIR}" ]; then
-  echo_success "Found nvm using NVM_DIR=${NVM_DIR}..."
-  source ${NVM_DIR}/nvm.sh
-  nvm install
-else
-  echo_error "nvm not found. Make sure you have installed node $(cat .nvmrc)"
-fi
-
-if command -v node > /dev/null && command -v npm > /dev/null; then
-  echo_success "Found node $(node -v) / npm $(npm -v)"
-else
-  echo_error "node (npm) not found."
-  exit 1
-fi
-
-echo "Install node packages..."
+echo "Install node modules"
 npm install
 
 echo "Setup husky..."
 npx husky install
-
-
-# Step 2: Extra work
-# ================
-
-echo "Finalizing..."
 chmod +x ./.husky/pre-commit
 chmod +x ./.husky/_/husky.sh
+
+echo "Setup package..."
 find ./@scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
 
 
