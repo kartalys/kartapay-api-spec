@@ -582,22 +582,6 @@
         "summary": "Read payments",
         "parameters": [
           {
-            "name": "X-Resource-Span",
-            "required": false,
-            "in": "header",
-            "schema": {
-              "title": "Span",
-              "type": "string",
-              "description": "The resource span.",
-              "enum": [
-                "all",
-                "view",
-                "owner",
-                "joint"
-              ]
-            }
-          },
-          {
             "name": "desc",
             "required": false,
             "in": "query",
@@ -637,6 +621,22 @@
             "description": "The pagination offset.",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "X-Resource-Span",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "title": "Span",
+              "type": "string",
+              "description": "The resource span.",
+              "enum": [
+                "all",
+                "view",
+                "owner",
+                "joint"
+              ]
             }
           },
           {
@@ -844,53 +844,6 @@
                               "total"
                             ]
                           },
-                          "fee": {
-                            "title": "Fees",
-                            "type": "object",
-                            "description": "The transaction fees (provider and KartaPay)",
-                            "providerFee": {
-                              "title": "Provider fees",
-                              "type": "object",
-                              "description": "Provider fees",
-                              "properties": {
-                                "value": {
-                                  "type": "string",
-                                  "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
-                                },
-                                "currency": {
-                                  "type": "string",
-                                  "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
-                                }
-                              },
-                              "required": [
-                                "value",
-                                "currency"
-                              ]
-                            },
-                            "kartaPayFee": {
-                              "title": "Kartapay fees",
-                              "type": "object",
-                              "description": "Kartapay fees",
-                              "properties": {
-                                "value": {
-                                  "type": "string",
-                                  "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
-                                },
-                                "currency": {
-                                  "type": "string",
-                                  "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
-                                }
-                              },
-                              "required": [
-                                "value",
-                                "currency"
-                              ]
-                            },
-                            "required": [
-                              "providerFee",
-                              "kartaPayFee"
-                            ]
-                          },
                           "reference": {
                             "type": "string",
                             "description": "A unique string to reference the payment. This can be an order ID, or similar, and can be used to reconcile the payment with your internal systems."
@@ -1082,9 +1035,18 @@
         "summary": "Read a payment",
         "parameters": [
           {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the payment.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "X-Resource-Span",
-            "required": false,
             "in": "header",
+            "required": false,
             "schema": {
               "title": "Span",
               "type": "string",
@@ -1095,15 +1057,6 @@
                 "owner",
                 "joint"
               ]
-            }
-          },
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "description": "The ID of the payment.",
-            "schema": {
-              "type": "string"
             }
           },
           {
@@ -1301,53 +1254,6 @@
                       },
                       "required": [
                         "total"
-                      ]
-                    },
-                    "fee": {
-                      "title": "Fees",
-                      "type": "object",
-                      "description": "The transaction fees (provider and KartaPay)",
-                      "providerFee": {
-                        "title": "Provider fees",
-                        "type": "object",
-                        "description": "Provider fees",
-                        "properties": {
-                          "value": {
-                            "type": "string",
-                            "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
-                          },
-                          "currency": {
-                            "type": "string",
-                            "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
-                          }
-                        },
-                        "required": [
-                          "value",
-                          "currency"
-                        ]
-                      },
-                      "kartaPayFee": {
-                        "title": "Kartapay fees",
-                        "type": "object",
-                        "description": "Kartapay fees",
-                        "properties": {
-                          "value": {
-                            "type": "string",
-                            "description": "The value of the amount.\n- An integer for currencies that are not typically fractional\n- A decimal fraction for currencies that are subdivided into thousandths"
-                          },
-                          "currency": {
-                            "type": "string",
-                            "description": "The currency code of the amount. This must be an ISO 4217 Standard (three letters) for currency codes."
-                          }
-                        },
-                        "required": [
-                          "value",
-                          "currency"
-                        ]
-                      },
-                      "required": [
-                        "providerFee",
-                        "kartaPayFee"
                       ]
                     },
                     "reference": {
@@ -2471,6 +2377,36 @@
         ]
       }
     },
+    "/v1/webhooks/payments/mvola-km": {
+      "post": {
+        "operationId": "WebhookController_mvolaKm",
+        "summary": "Handle a MVola KM payment webhook",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Webhooks"
+        ]
+      }
+    },
     "/v1/webhooks/payments/mvola-mg": {
       "put": {
         "operationId": "WebhookController_mvolaMg",
@@ -2593,49 +2529,6 @@
           }
         ]
       }
-    },
-    "/v1/webhooks/payments/mvola-km": {
-      "post": {
-        "operationId": "WebhookController_mvolaKm",
-        "summary": "Handle a mvola KM payment webhook",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MvolaKmWebhookBody"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "tags": [
-          "Webhooks"
-        ],
-        "security": [
-          {
-            "HttpBasic": []
-          }
-        ]
-      }
     }
   },
   "info": {
@@ -2675,49 +2568,6 @@
         "description": "HTTP Bearer authentication with JWT token"
       }
     },
-    "schemas": {
-      "MvolaKmWebhookBody": {
-        "type": "object",
-        "required": [
-          "operationID",
-          "msisdn",
-          "amount",
-          "description",
-          "status",
-          "transID",
-          "transIDP"
-        ],
-        "properties": {
-          "operationID": {
-            "type": "string",
-            "description": "Operation identification"
-          },
-          "msisdn": {
-            "type": "string",
-            "description": "Sender phone number, Comoros local phone number preceded by country iso code (2694255899)"
-          },
-          "amount": {
-            "type": "number",
-            "description": "Amount to transfer"
-          },
-          "description": {
-            "type": "string",
-            "description": "Operation result"
-          },
-          "status": {
-            "type": "string",
-            "description": "Operation status"
-          },
-          "transID": {
-            "type": "string",
-            "description": "Transaction identification on mobile money platform"
-          },
-          "transIDP": {
-            "type": "string",
-            "description": "Partner Transaction identification"
-          }
-        }
-      }
-    }
+    "schemas": {}
   }
 }
