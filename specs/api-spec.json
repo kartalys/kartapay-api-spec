@@ -174,11 +174,11 @@
                       "total"
                     ]
                   },
-                  "reference": {
+                  "clientId": {
                     "type": "string",
                     "description": "A unique string to reference the payment. This can be an order ID, or similar, and can be used to reconcile the payment with your internal systems."
                   },
-                  "note": {
+                  "clientNote": {
                     "type": "string",
                     "description": "A note to attach to the payment. This can be additional information."
                   },
@@ -414,11 +414,11 @@
                             "total"
                           ]
                         },
-                        "reference": {
+                        "clientId": {
                           "type": "string",
                           "description": "A unique string to reference the payment. This can be an order ID, or similar, and can be used to reconcile the payment with your internal systems."
                         },
-                        "note": {
+                        "clientNote": {
                           "type": "string",
                           "description": "A note to attach to the payment. This can be additional information."
                         },
@@ -487,23 +487,23 @@
                             },
                             "declineUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is declined on the provider side."
                             },
                             "captureUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is approved on the provider side."
                             },
-                            "thirdId": {
+                            "providerId": {
                               "type": "string",
-                              "description": "A unique string to reference the payment on the third-party side."
+                              "description": "A unique string to reference the payment on the provider side."
                             },
                             "traces": {
                               "type": "array",
-                              "description": "The transactions received from the third-party side."
+                              "description": "The transactions received from the provider side."
                             },
                             "intent": {
                               "type": "object",
-                              "description": "The payment data created on the third-party side."
+                              "description": "The payment data created on the provider side."
                             },
                             "proof": {
                               "type": "string",
@@ -511,7 +511,7 @@
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received after the payment is completed on the third-party side."
+                              "description": "The signature of the webhook message received after the payment is completed on the provider side."
                             }
                           }
                         },
@@ -844,11 +844,11 @@
                               "total"
                             ]
                           },
-                          "reference": {
+                          "clientId": {
                             "type": "string",
                             "description": "A unique string to reference the payment. This can be an order ID, or similar, and can be used to reconcile the payment with your internal systems."
                           },
-                          "note": {
+                          "clientNote": {
                             "type": "string",
                             "description": "A note to attach to the payment. This can be additional information."
                           },
@@ -917,23 +917,23 @@
                               },
                               "declineUrl": {
                                 "type": "string",
-                                "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
+                                "description": "The URL where your customers are redirected to after the payment is declined on the provider side."
                               },
                               "captureUrl": {
                                 "type": "string",
-                                "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
+                                "description": "The URL where your customers are redirected to after the payment is approved on the provider side."
                               },
-                              "thirdId": {
+                              "providerId": {
                                 "type": "string",
-                                "description": "A unique string to reference the payment on the third-party side."
+                                "description": "A unique string to reference the payment on the provider side."
                               },
                               "traces": {
                                 "type": "array",
-                                "description": "The transactions received from the third-party side."
+                                "description": "The transactions received from the provider side."
                               },
                               "intent": {
                                 "type": "object",
-                                "description": "The payment data created on the third-party side."
+                                "description": "The payment data created on the provider side."
                               },
                               "proof": {
                                 "type": "string",
@@ -941,7 +941,7 @@
                               },
                               "signature": {
                                 "type": "string",
-                                "description": "The signature of the webhook message received after the payment is completed on the third-party side."
+                                "description": "The signature of the webhook message received after the payment is completed on the provider side."
                               }
                             }
                           },
@@ -1256,11 +1256,11 @@
                         "total"
                       ]
                     },
-                    "reference": {
+                    "clientId": {
                       "type": "string",
                       "description": "A unique string to reference the payment. This can be an order ID, or similar, and can be used to reconcile the payment with your internal systems."
                     },
-                    "note": {
+                    "clientNote": {
                       "type": "string",
                       "description": "A note to attach to the payment. This can be additional information."
                     },
@@ -1329,23 +1329,23 @@
                         },
                         "declineUrl": {
                           "type": "string",
-                          "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
+                          "description": "The URL where your customers are redirected to after the payment is declined on the provider side."
                         },
                         "captureUrl": {
                           "type": "string",
-                          "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
+                          "description": "The URL where your customers are redirected to after the payment is approved on the provider side."
                         },
-                        "thirdId": {
+                        "providerId": {
                           "type": "string",
-                          "description": "A unique string to reference the payment on the third-party side."
+                          "description": "A unique string to reference the payment on the provider side."
                         },
                         "traces": {
                           "type": "array",
-                          "description": "The transactions received from the third-party side."
+                          "description": "The transactions received from the provider side."
                         },
                         "intent": {
                           "type": "object",
-                          "description": "The payment data created on the third-party side."
+                          "description": "The payment data created on the provider side."
                         },
                         "proof": {
                           "type": "string",
@@ -1353,7 +1353,7 @@
                         },
                         "signature": {
                           "type": "string",
-                          "description": "The signature of the webhook message received after the payment is completed on the third-party side."
+                          "description": "The signature of the webhook message received after the payment is completed on the provider side."
                         }
                       }
                     },
@@ -1639,11 +1639,11 @@
                             "total"
                           ]
                         },
-                        "reference": {
+                        "clientId": {
                           "type": "string",
                           "description": "A unique string to reference the payment. This can be an order ID, or similar, and can be used to reconcile the payment with your internal systems."
                         },
-                        "note": {
+                        "clientNote": {
                           "type": "string",
                           "description": "A note to attach to the payment. This can be additional information."
                         },
@@ -1712,23 +1712,23 @@
                             },
                             "declineUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is declined on the provider side."
                             },
                             "captureUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is approved on the provider side."
                             },
-                            "thirdId": {
+                            "providerId": {
                               "type": "string",
-                              "description": "A unique string to reference the payment on the third-party side."
+                              "description": "A unique string to reference the payment on the provider side."
                             },
                             "traces": {
                               "type": "array",
-                              "description": "The transactions received from the third-party side."
+                              "description": "The transactions received from the provider side."
                             },
                             "intent": {
                               "type": "object",
-                              "description": "The payment data created on the third-party side."
+                              "description": "The payment data created on the provider side."
                             },
                             "proof": {
                               "type": "string",
@@ -1736,7 +1736,7 @@
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received after the payment is completed on the third-party side."
+                              "description": "The signature of the webhook message received after the payment is completed on the provider side."
                             }
                           }
                         },
@@ -2051,11 +2051,11 @@
                             "total"
                           ]
                         },
-                        "reference": {
+                        "clientId": {
                           "type": "string",
                           "description": "A unique string to reference the payment. This can be an order ID, or similar, and can be used to reconcile the payment with your internal systems."
                         },
-                        "note": {
+                        "clientNote": {
                           "type": "string",
                           "description": "A note to attach to the payment. This can be additional information."
                         },
@@ -2124,23 +2124,23 @@
                             },
                             "declineUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to after the payment is declined on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is declined on the provider side."
                             },
                             "captureUrl": {
                               "type": "string",
-                              "description": "The URL where your customers are redirected to after the payment is approved on the third-party side."
+                              "description": "The URL where your customers are redirected to after the payment is approved on the provider side."
                             },
-                            "thirdId": {
+                            "providerId": {
                               "type": "string",
-                              "description": "A unique string to reference the payment on the third-party side."
+                              "description": "A unique string to reference the payment on the provider side."
                             },
                             "traces": {
                               "type": "array",
-                              "description": "The transactions received from the third-party side."
+                              "description": "The transactions received from the provider side."
                             },
                             "intent": {
                               "type": "object",
-                              "description": "The payment data created on the third-party side."
+                              "description": "The payment data created on the provider side."
                             },
                             "proof": {
                               "type": "string",
@@ -2148,7 +2148,7 @@
                             },
                             "signature": {
                               "type": "string",
-                              "description": "The signature of the webhook message received after the payment is completed on the third-party side."
+                              "description": "The signature of the webhook message received after the payment is completed on the provider side."
                             }
                           }
                         },
