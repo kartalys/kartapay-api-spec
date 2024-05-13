@@ -34,6 +34,13 @@
                         "type": "string",
                         "description": "A language code. This should be an ISO 639-1 Standard for language codes.",
                         "pattern": "/^[a-z]{2}-[A-Z]{2}$/"
+                      },
+                      "channels": {
+                        "type": "array",
+                        "description": "An extra dimension of filtering messages.",
+                        "items": {
+                          "type": "string"
+                        }
                       }
                     }
                   },
@@ -263,6 +270,13 @@
                               "type": "string",
                               "description": "A language code. This should be an ISO 639-1 Standard for language codes.",
                               "pattern": "/^[a-z]{2}-[A-Z]{2}$/"
+                            },
+                            "channels": {
+                              "type": "array",
+                              "description": "An extra dimension of filtering messages.",
+                              "items": {
+                                "type": "string"
+                              }
                             }
                           }
                         },
@@ -693,6 +707,13 @@
                                 "type": "string",
                                 "description": "A language code. This should be an ISO 639-1 Standard for language codes.",
                                 "pattern": "/^[a-z]{2}-[A-Z]{2}$/"
+                              },
+                              "channels": {
+                                "type": "array",
+                                "description": "An extra dimension of filtering messages.",
+                                "items": {
+                                  "type": "string"
+                                }
                               }
                             }
                           },
@@ -1105,6 +1126,13 @@
                           "type": "string",
                           "description": "A language code. This should be an ISO 639-1 Standard for language codes.",
                           "pattern": "/^[a-z]{2}-[A-Z]{2}$/"
+                        },
+                        "channels": {
+                          "type": "array",
+                          "description": "An extra dimension of filtering messages.",
+                          "items": {
+                            "type": "string"
+                          }
                         }
                       }
                     },
@@ -1488,6 +1516,13 @@
                               "type": "string",
                               "description": "A language code. This should be an ISO 639-1 Standard for language codes.",
                               "pattern": "/^[a-z]{2}-[A-Z]{2}$/"
+                            },
+                            "channels": {
+                              "type": "array",
+                              "description": "An extra dimension of filtering messages.",
+                              "items": {
+                                "type": "string"
+                              }
                             }
                           }
                         },
@@ -1900,6 +1935,13 @@
                               "type": "string",
                               "description": "A language code. This should be an ISO 639-1 Standard for language codes.",
                               "pattern": "/^[a-z]{2}-[A-Z]{2}$/"
+                            },
+                            "channels": {
+                              "type": "array",
+                              "description": "An extra dimension of filtering messages.",
+                              "items": {
+                                "type": "string"
+                              }
                             }
                           }
                         },
