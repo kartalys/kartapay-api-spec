@@ -41,6 +41,14 @@
                         "items": {
                           "type": "string"
                         }
+                      },
+                      "redirectMode": {
+                        "type": "string",
+                        "description": "The redirect mode of the payment. Defaults to embedded.",
+                        "enum": [
+                          "embedded",
+                          "hosted"
+                        ]
                       }
                     }
                   },
@@ -210,17 +218,15 @@
                   },
                   "cancelUrl": {
                     "type": "string",
-                    "description": "The URL to redirect your customers to after the payment is canceled."
+                    "description": "The URL to redirect your customers to after the payment is canceled. Required if redirectMode is embedded"
                   },
                   "successUrl": {
                     "type": "string",
-                    "description": "The URL to redirect your customers to after the payment is captured."
+                    "description": "The URL to redirect your customers to after the payment is captured. Required if redirectMode is embedded"
                   }
                 },
                 "required": [
-                  "purchase",
-                  "cancelUrl",
-                  "successUrl"
+                  "purchase"
                 ]
               }
             }
@@ -277,6 +283,14 @@
                               "items": {
                                 "type": "string"
                               }
+                            },
+                            "redirectMode": {
+                              "type": "string",
+                              "description": "The redirect mode of the payment. Defaults to embedded.",
+                              "enum": [
+                                "embedded",
+                                "hosted"
+                              ]
                             }
                           }
                         },
@@ -559,9 +573,7 @@
                         }
                       },
                       "required": [
-                        "purchase",
-                        "cancelUrl",
-                        "successUrl"
+                        "purchase"
                       ]
                     }
                   }
@@ -638,22 +650,6 @@
             }
           },
           {
-            "name": "X-Resource-Span",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "title": "Span",
-              "type": "string",
-              "description": "The resource span.",
-              "enum": [
-                "all",
-                "view",
-                "owner",
-                "joint"
-              ]
-            }
-          },
-          {
             "name": "Accept-Language",
             "in": "header",
             "required": false,
@@ -714,6 +710,14 @@
                                 "items": {
                                   "type": "string"
                                 }
+                              },
+                              "redirectMode": {
+                                "type": "string",
+                                "description": "The redirect mode of the payment. Defaults to embedded.",
+                                "enum": [
+                                  "embedded",
+                                  "hosted"
+                                ]
                               }
                             }
                           },
@@ -996,9 +1000,7 @@
                           }
                         },
                         "required": [
-                          "purchase",
-                          "cancelUrl",
-                          "successUrl"
+                          "purchase"
                         ]
                       }
                     },
@@ -1065,22 +1067,6 @@
             }
           },
           {
-            "name": "X-Resource-Span",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "title": "Span",
-              "type": "string",
-              "description": "The resource span.",
-              "enum": [
-                "all",
-                "view",
-                "owner",
-                "joint"
-              ]
-            }
-          },
-          {
             "name": "Accept-Language",
             "in": "header",
             "required": false,
@@ -1133,6 +1119,14 @@
                           "items": {
                             "type": "string"
                           }
+                        },
+                        "redirectMode": {
+                          "type": "string",
+                          "description": "The redirect mode of the payment. Defaults to embedded.",
+                          "enum": [
+                            "embedded",
+                            "hosted"
+                          ]
                         }
                       }
                     },
@@ -1415,9 +1409,7 @@
                     }
                   },
                   "required": [
-                    "purchase",
-                    "cancelUrl",
-                    "successUrl"
+                    "purchase"
                   ]
                 }
               }
@@ -1523,6 +1515,14 @@
                               "items": {
                                 "type": "string"
                               }
+                            },
+                            "redirectMode": {
+                              "type": "string",
+                              "description": "The redirect mode of the payment. Defaults to embedded.",
+                              "enum": [
+                                "embedded",
+                                "hosted"
+                              ]
                             }
                           }
                         },
@@ -1805,9 +1805,7 @@
                         }
                       },
                       "required": [
-                        "purchase",
-                        "cancelUrl",
-                        "successUrl"
+                        "purchase"
                       ]
                     }
                   }
@@ -1942,6 +1940,14 @@
                               "items": {
                                 "type": "string"
                               }
+                            },
+                            "redirectMode": {
+                              "type": "string",
+                              "description": "The redirect mode of the payment. Defaults to embedded.",
+                              "enum": [
+                                "embedded",
+                                "hosted"
+                              ]
                             }
                           }
                         },
@@ -2224,9 +2230,7 @@
                         }
                       },
                       "required": [
-                        "purchase",
-                        "cancelUrl",
-                        "successUrl"
+                        "purchase"
                       ]
                     }
                   }
