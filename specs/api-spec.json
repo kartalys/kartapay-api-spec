@@ -49,6 +49,10 @@
                           "embedded",
                           "hosted"
                         ]
+                      },
+                      "terminalId": {
+                        "type": "string",
+                        "description": "Aims to link a payment to a payment terminal. Must be an UUID."
                       }
                     }
                   },
@@ -291,6 +295,10 @@
                                 "embedded",
                                 "hosted"
                               ]
+                            },
+                            "terminalId": {
+                              "type": "string",
+                              "description": "Aims to link a payment to a payment terminal. Must be an UUID."
                             }
                           }
                         },
@@ -718,6 +726,10 @@
                                   "embedded",
                                   "hosted"
                                 ]
+                              },
+                              "terminalId": {
+                                "type": "string",
+                                "description": "Aims to link a payment to a payment terminal. Must be an UUID."
                               }
                             }
                           },
@@ -1127,6 +1139,10 @@
                             "embedded",
                             "hosted"
                           ]
+                        },
+                        "terminalId": {
+                          "type": "string",
+                          "description": "Aims to link a payment to a payment terminal. Must be an UUID."
                         }
                       }
                     },
@@ -1523,6 +1539,10 @@
                                 "embedded",
                                 "hosted"
                               ]
+                            },
+                            "terminalId": {
+                              "type": "string",
+                              "description": "Aims to link a payment to a payment terminal. Must be an UUID."
                             }
                           }
                         },
@@ -1948,6 +1968,10 @@
                                 "embedded",
                                 "hosted"
                               ]
+                            },
+                            "terminalId": {
+                              "type": "string",
+                              "description": "Aims to link a payment to a payment terminal. Must be an UUID."
                             }
                           }
                         },
