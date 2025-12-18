@@ -220,6 +220,24 @@
                       }
                     }
                   },
+                  "metadata": {
+                    "type": "array",
+                    "description": "Custom metadata for the payment. Array of key-value pairs.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "description": "Metadata key."
+                        },
+                        "value": {
+                          "type": "string",
+                          "description": "Metadata value."
+                        }
+                      },
+                      "required": ["key", "value"]
+                    }
+                  },
                   "cancelUrl": {
                     "type": "string",
                     "description": "The URL to redirect your customers to after the payment is canceled. Required if redirectMode is embedded"
@@ -251,6 +269,24 @@
                     "data": {
                       "title": "Payment",
                       "type": "object",
+                  "metadata": {
+                    "type": "array",
+                    "description": "Custom metadata for the payment. Array of key-value pairs.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "description": "Metadata key."
+                        },
+                        "value": {
+                          "type": "string",
+                          "description": "Metadata value."
+                        }
+                      },
+                      "required": ["key", "value"]
+                    }
+                  },
                       "description": "The payment data.",
                       "properties": {
                         "status": {
