@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npx redoc-cli build specs/api-spec.json
+npx @redocly/cli build-docs specs/api-spec.json
 mv redoc-static.html pages/index.html
 
 # Might make the favicon work
