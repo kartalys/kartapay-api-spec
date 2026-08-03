@@ -1956,17 +1956,6 @@
   "servers": [],
   "components": {
     "securitySchemes": {
-      "ApiKey": {
-        "type": "apiKey",
-        "in": "query",
-        "name": "token",
-        "description": "API Key authentication with URL token"
-      },
-      "HttpBasic": {
-        "type": "http",
-        "scheme": "basic",
-        "description": "HTTP Basic authentication"
-      },
       "HttpBearer": {
         "type": "http",
         "scheme": "bearer",
