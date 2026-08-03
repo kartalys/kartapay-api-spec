@@ -1949,20 +1949,8 @@
   },
   "tags": [
     {
-      "name": "Merchants",
-      "description": "The endpoints for managing merchants"
-    },
-    {
       "name": "Payments",
       "description": "The endpoints for managing payments"
-    },
-    {
-      "name": "Reporting",
-      "description": "The endpoints for reporting summary"
-    },
-    {
-      "name": "Webhooks",
-      "description": "The endpoints for handling webhooks"
     }
   ],
   "servers": [],
